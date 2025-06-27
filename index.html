@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Chen - Full Stack Developer & Digital Architect</title>
+    <meta name="description"
+        content="Full Stack Developer specializing in React, Node.js, and AI-powered applications. Building innovative digital experiences that transcend the ordinary.">
+    <meta name="keywords"
+        content="Full Stack Developer, React, Node.js, TypeScript, AI, Web Development, Portfolio, Digital Architecture">
+    <meta name="author" content="Alex Chen">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Alex Chen - Full Stack Developer & Digital Architect">
+    <meta property="og:description"
+        content="Full Stack Developer specializing in React, Node.js, and AI-powered applications.">
+    <meta property="og:type" content="website">
+
+    <!-- Preload critical fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo" onclick="scrollToSection('home')">
+                <div class="logo-icon">
+                    <i data-lucide="sparkles"></i>
+                    <div class="rotating-dot"></div>
+                </div>
+                <span class="logo-text">Esoteric</span>
+            </div>
+
+            <div class="nav-links desktop-nav">
+                <button class="nav-link active" data-section="home">Home</button>
+                <button class="nav-link" data-section="about">About</button>
+                <button class="nav-link" data-section="skills">Skills</button>
+                <button class="nav-link" data-section="projects">Projects</button>
+                <button class="nav-link" data-section="experience">Experience</button>
+                <button class="nav-link" data-section="achievements">Achievements</button>
+                <!-- <button class="nav-link" data-section="blog">Blog</button> -->
+                <button class="nav-link" data-section="contact">Contact</button>
+            </div>
+
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+
+        <div class="mobile-nav" id="mobile-nav">
+            <button class="nav-link" data-section="home">Home</button>
+            <button class="nav-link" data-section="about">About</button>
+            <button class="nav-link" data-section="skills">Skills</button>
+            <button class="nav-link" data-section="projects">Projects</button>
+            <button class="nav-link" data-section="experience">Experience</button>
+            <button class="nav-link" data-section="achievements">Achievements</button>
+            <button class="nav-link" data-section="blog">Blog</button>
+            <button class="nav-link" data-section="contact">Contact</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="floating-shapes">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+        </div>
+
+        <div class="hero-content">
+            <div class="availability-badge">
+                <span>Available for opportunities</span>
+            </div>
+
+            <h1 class="hero-title">
+                <span class="title-normal">Hi, I'm </span>
+                <span class="title-gradient">Harshit Sengar</span>
+            </h1>
+
+            <h2 class="hero-subtitle">Full Stack Developer & DevOps Engineer</h2>
+
+            <p class="hero-description">
+                Detail-oriented developer skilled in building full-stack web applications, focused on delivering
+                efficient
+                solutions and eager to contribute innovative ideas in fast-paced environments.
+            </p>
+
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="scrollToSection('contact')">
+                    <i data-lucide="mail"></i>
+                    Get In Touch
+                </button>
+                <button class="btn btn-secondary">
+                    <i data-lucide="download"></i>
+                    Download Resume
+                </button>
+            </div>
+
+            <div class="social-links">
+                <a href="https://github.com" target="_blank" class="social-link">
+                    <i data-lucide="github"></i>
+                </a>
+                <a href="https://linkedin.com" target="_blank" class="social-link">
+                    <i data-lucide="linkedin"></i>
+                </a>
+                <a href="https://twitter.com" target="_blank" class="social-link">
+                    <i data-lucide="twitter"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    About <span class="gradient-text">Me</span>
+                </h2>
+                <p class="section-subtitle">
+                    Passionate developer on a mission to create extraordinary digital experiences
+                </p>
+            </div>
+
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>My Journey</h3>
+
+                    <p>From writing basic Java programs to building full-stack web applications and deploying scalable
+                        systems, my journey has been driven by curiosity and execution.</p>
+                    <p>I started by exploring core programming concepts, eventually mastering the MERN stack for
+                        frontend and backend development. Along the way, I discovered the power of automation, and cloud infrastructure — leading me to embrace the world of DevOps.</p>
+                    <p>Today, I build performance-focused applications and manage end-to-end development—
+                        from clean UIs to robust deployment pipelines.
+                        This journey isn't just about writing code. It's about solving
+                        problems, and pushing ideas into reality.</p>
+                </div>
+
+                <div class="about-facts">
+                    <h3>Fun Facts</h3>
+                    <ul class="facts-list">
+                        <li><span class="fact-dot dot-blue"></span>⌨️ 171 WPM for 7 seconds- my fingers type faster than I think</li>
+                        <li><span class="fact-dot dot-purple"></span>💡 Explored 5+ programming languages before engineering</li>
+                        <li><span class="fact-dot dot-pink"></span>🗣️ Learned Spanish just to kill school vacation boredom</li>
+                        <li><span class="fact-dot dot-green"></span>🧩 Mind-bending puzzles are my version of meditation</li>
+                        <li><span class="fact-dot dot-orange"></span>🎸 I write poetry and play instruments when the code rests</li>
+                        <li><span class="fact-dot dot-orange"></span>🌌 Outer space chaos? My favorite kind of order</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="values-grid">
+                <h3 class="values-title">My <span class="gradient-text">Values</span></h3>
+                <div class="values-container">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i data-lucide="code-2"></i>
+                        </div>
+                        <h4>Clean Code</h4>
+                        <p>I believe in writing code that is not only functional but also maintainable and elegant.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i data-lucide="rocket"></i>
+                        </div>
+                        <h4>Innovation</h4>
+                        <p>Always exploring new technologies and pushing the boundaries of what's possible.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i data-lucide="heart"></i>
+                        </div>
+                        <h4>Passion</h4>
+                        <p>Driven by genuine love for creating digital solutions that make a positive impact.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section skills-section">
+
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    Skills & <span class="gradient-text">Expertise</span>
+                </h2>
+                <p class="section-subtitle">
+                    Technologies and tools I use to bring ideas to life
+                </p>
+            </div>
+
+            <div class="skills-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="frontend">Frontend</button>
+                <button class="filter-btn" data-filter="backend">Backend</button>
+                <button class="filter-btn" data-filter="languages">Languages</button>
+                <button class="filter-btn" data-filter="tools">Tools</button>
+            </div>
+
+            <div class="skills-grid" id="skills-grid">
+                <!-- Skills will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects-section">
+
+
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    Featured <span class="gradient-text">Projects</span>
+                </h2>
+                <p class="section-subtitle">
+                    A showcase of my recent work and creative solutions
+                </p>
+            </div>
+
+            <div class="projects-filter">
+                <div class="filter-label">
+                    <i data-lucide="filter"></i>
+                    <span>Filter by:</span>
+                </div>
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="fintech">Fintech</button>
+                <button class="filter-btn" data-filter="productivity">Productivity</button>
+                <button class="filter-btn" data-filter="entertainment">Entertainment</button>
+            </div>
+
+            <div class="projects-grid" id="projects-grid">
+                <!-- Projects will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section experience-section">
+
+
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    Experience & <span class="gradient-text">Education</span>
+                </h2>
+                <p class="section-subtitle">
+                    My professional journey and academic background
+                </p>
+            </div>
+
+            <div class="experience-content">
+                <div class="experience-column">
+                    <div class="column-header">
+                        <i data-lucide="building"></i>
+                        <h3>Work Experience</h3>
+                    </div>
+                    <div class="timeline" id="work-timeline">
+                        <!-- Work experience will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <div class="experience-column">
+                    <div class="column-header">
+                        <i data-lucide="graduation-cap"></i>
+                        <h3>Education</h3>
+                    </div>
+                    <div class="timeline" id="education-timeline">
+                        <!-- Education will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="section achievements-section">
+
+
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    Achievements & <span class="gradient-text">Certifications</span>
+                </h2>
+                <p class="section-subtitle">
+                    Recognition and milestones in my professional journey
+                </p>
+            </div>
+
+            <div class="achievements-grid" id="achievements-grid">
+                <!-- Achievements will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <!-- <section id="blog" class="section blog-section">
+
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    Blog & <span class="gradient-text">Insights</span>
+                </h2>
+                <p class="section-subtitle">
+                    Thoughts, tutorials, and insights from my development journey
+                </p>
+            </div>
+
+            <div class="blog-grid" id="blog-grid">
+                
+            </div>
+
+            <div class="blog-cta">
+                <button class="btn btn-primary">
+                    View All Articles
+                    <i data-lucide="arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+
+
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    Let's <span class="gradient-text">Connect</span>
+                </h2>
+                <p class="section-subtitle">
+                    Have a project in mind or just want to chat? I'd love to hear from you
+                </p>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-form-container">
+                    <h3>Send a Message</h3>
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Your Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i data-lucide="send"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <h3>Get in Touch</h3>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i data-lucide="mail"></i>
+                            </div>
+                            <div>
+                                <div class="contact-label">Email</div>
+                                <a href="mailto:email@example.com">harshsengar2005@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i data-lucide="phone"></i>
+                            </div>
+                            <div>
+                                <div class="contact-label">Phone</div>
+                                <a href="tel:+91 9354301392">+91 9354301392</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i data-lucide="map-pin"></i>
+                            </div>
+                            <div>
+                                <div class="contact-label">Location</div>
+                                <span>LalKuan, Ghaziabad, India</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-constellation">
+                        <h3>Follow Me</h3>
+                        <div class="constellation-container">
+                            <div class="constellation-center">AC</div>
+                            <a href="https://github.com/0esoteric" class="constellation-link" style="--angle: 0deg;">
+                                <i data-lucide="github"></i>
+                            </a>
+                            <a href="http://www.linkedin.com/in/0harshit" class="constellation-link" style="--angle: 90deg;">
+                                <i data-lucide="linkedin"></i>
+                            </a>
+                            <a href="https://instagram.com/0_esomist__" class="constellation-link" style="--angle: 270deg;">
+                                <i data-lucide="instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <i data-lucide="sparkles"></i>
+                            <div class="rotating-dot"></div>
+                        </div>
+                        <span class="logo-text">Esoteric</span>
+                    </div>
+                    <p>Crafting digital experiences that bridge innovation and technology. Let's build something amazing
+                        together.</p>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <div class="links-grid">
+                        <button onclick="scrollToSection('home')">Home</button>
+                        <button onclick="scrollToSection('about')">About</button>
+                        <button onclick="scrollToSection('skills')">Skills</button>
+                        <button onclick="scrollToSection('projects')">Projects</button>
+                        <button onclick="scrollToSection('experience')">Experience</button>
+                        <button onclick="scrollToSection('contact')">Contact</button>
+                    </div>
+                </div>
+
+                <div class="footer-tech">
+                    <h4>Built With</h4>
+                    <div class="tech-tags">
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>JavaScript</span>
+                        <span>Canvas API</span>
+                        <span>Web Animations</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-credits">
+                    <span>Made by</span>
+                    <span>Harshit Sengar</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Project Modal -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close">
+                <i data-lucide="x"></i>
+            </button>
+            <div class="modal-body" id="modal-body">
+                <!-- Modal content will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
