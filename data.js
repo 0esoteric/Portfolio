@@ -40,7 +40,7 @@ const projectsData = [
         longDescription: 'Enable journals, smart task management, and AI-generated monthly insights. Builds a personalized knowledge graph by mapping user thoughts, actions, and habits. Architecture planned for AI integration to analyze journals, tasks and research data',
         category: 'productivity',
         technologies: ['React.js', 'Node.js', 'Express.js', 'chart.js', 'figma', "tailwindcss"],
-        imageUrl: 'assets/Noema_Img.png',
+        imageUrl: 'assets/Noema_img.png',
         demoUrl: 'https://example.com/cosmic-explorer',
         githubUrl: 'https://github.com/example/cosmic-explorer',
         featured: true
