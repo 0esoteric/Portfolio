@@ -149,33 +149,3 @@ const achievementsData = [
         url: ''
     }
 ];
-
-// const blogData = [
-//     {
-//         id: '1',
-//         title: 'The Future of Web Development: What to Expect in 2024',
-//         excerpt: 'Exploring emerging trends in web development including AI integration, WebAssembly, and the evolution of JavaScript frameworks.',
-//         content: 'Full content would go here...',
-//         date: '2024-01-15',
-//         tags: ['Web Development', 'AI', 'JavaScript', 'Trends'],
-//         readTime: 8
-//     },
-//     {
-//         id: '2',
-//         title: 'Building Scalable React Applications: Lessons Learned',
-//         excerpt: 'Key insights from building large-scale React applications, including state management, performance optimization, and architecture patterns.',
-//         content: 'Full content would go here...',
-//         date: '2024-01-08',
-//         tags: ['React', 'Architecture', 'Performance', 'Best Practices'],
-//         readTime: 12
-//     },
-//     {
-//         id: '3',
-//         title: 'From Concept to Code: My AI Project Journey',
-//         excerpt: 'A detailed walkthrough of developing an AI-powered web application, from initial idea to production deployment.',
-//         content: 'Full content would go here...',
-//         date: '2024-01-01',
-//         tags: ['AI', 'Machine Learning', 'Project Management', 'Development'],
-//         readTime: 15
-//     }
-// ];

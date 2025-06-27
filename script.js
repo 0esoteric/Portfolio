@@ -19,7 +19,7 @@ class Navigation {
         
         this.init();
     }
-    
+
     init() {
         // Handle scroll for navbar background
         window.addEventListener('scroll', () => {
@@ -28,15 +28,14 @@ class Navigation {
             } else {
                 this.navbar.classList.remove('scrolled');
             }
-            
             this.updateActiveSection();
         });
-        
+
         // Mobile menu toggle
         this.mobileMenuBtn.addEventListener('click', () => {
             this.toggleMobileMenu();
         });
-        
+
         // Navigation links
         this.navLinks.forEach(link => {
             link.addEventListener('click', (e) => {
@@ -47,36 +46,39 @@ class Navigation {
                 }
             });
         });
-        
+
         // Close mobile menu when clicking outside
         document.addEventListener('click', (e) => {
-            if (!this.navbar.contains(e.target)) {
+            if (!this.navbar.contains(e.target) && this.mobileNav.style.display === 'flex') {
                 this.closeMobileMenu();
             }
         });
     }
-    
+
     toggleMobileMenu() {
         const isOpen = this.mobileNav.style.display === 'flex';
         this.mobileNav.style.display = isOpen ? 'none' : 'flex';
-        
-        // Update icon
+
         const icon = this.mobileMenuBtn.querySelector('i');
-        icon.setAttribute('data-lucide', isOpen ? 'menu' : 'x');
-        lucide.createIcons();
+        if (icon) {
+            icon.setAttribute('data-lucide', isOpen ? 'menu' : 'x');
+            lucide.createIcons();
+        }
     }
-    
+
     closeMobileMenu() {
         this.mobileNav.style.display = 'none';
         const icon = this.mobileMenuBtn.querySelector('i');
-        icon.setAttribute('data-lucide', 'menu');
-        lucide.createIcons();
+        if (icon) {
+            icon.setAttribute('data-lucide', 'menu');
+            lucide.createIcons();
+        }
     }
-    
+
     updateActiveSection() {
-        const sections = ['home', 'about', 'skills', 'projects', 'experience', 'achievements', 'blog', 'contact'];
+        const sections = ['home', 'about', 'skills', 'projects', 'experience', 'achievements', 'contact'];
         const scrollPosition = window.scrollY + 100;
-        
+
         for (let i = sections.length - 1; i >= 0; i--) {
             const section = document.getElementById(sections[i]);
             if (section && section.offsetTop <= scrollPosition) {
@@ -85,10 +87,10 @@ class Navigation {
             }
         }
     }
-    
+
     setActiveSection(sectionId) {
         if (this.activeSection === sectionId) return;
-        
+
         this.activeSection = sectionId;
         this.navLinks.forEach(link => {
             link.classList.remove('active');
@@ -97,7 +99,7 @@ class Navigation {
             }
         });
     }
-    
+
     scrollToSection(sectionId) {
         const element = document.getElementById(sectionId);
         if (element) {
@@ -105,6 +107,11 @@ class Navigation {
         }
     }
 }
+
+// Only instantiate after DOM is fully loaded
+document.addEventListener('DOMContentLoaded', () => {
+    new Navigation();
+});
 
 
 
@@ -483,68 +490,8 @@ class AchievementsSection {
     }
 }
 
-// // Blog Section
-// class BlogSection {
-//     constructor() {
-//         this.container = document.getElementById('blog-grid');
-        
-//         this.init();
-//     }
-    
-//     init() {
-//         this.renderBlogPosts();
-//     }
-    
-//     renderBlogPosts() {
-//         this.container.innerHTML = '';
-        
-//         blogData.forEach(post => {
-//             const blogCard = document.createElement('div');
-//             blogCard.className = 'blog-card';
-            
-//             const date = new Date(post.date);
-//             const formattedDate = date.toLocaleDateString('en-US', {
-//                 year: 'numeric',
-//                 month: 'long',
-//                 day: 'numeric'
-//             });
-            
-//             blogCard.innerHTML = `
-//                 <div class="blog-meta">
-//                     <div class="blog-date">
-//                         <i data-lucide="calendar"></i>
-//                         ${formattedDate}
-//                     </div>
-//                     <div class="blog-read-time">
-//                         <i data-lucide="clock"></i>
-//                         ${post.readTime} min read
-//                     </div>
-//                 </div>
-//                 <h3 class="blog-title">${post.title}</h3>
-//                 <p class="blog-excerpt">${post.excerpt}</p>
-//                 <div class="blog-tags">
-//                     ${post.tags.slice(0, 3).map(tag => 
-//                         `<span class="blog-tag">
-//                             <i data-lucide="tag"></i>
-//                             ${tag}
-//                         </span>`
-//                     ).join('')}
-//                     ${post.tags.length > 3 ? 
-//                         `<span class="blog-tag">+${post.tags.length - 3} more</span>` : ''
-//                     }
-//                 </div>
-//                 <div class="blog-read-more">
-//                     <span>Read More</span>
-//                     <i data-lucide="arrow-right"></i>
-//                 </div>
-//             `;
-            
-//             this.container.appendChild(blogCard);
-//         });
-        
-//         lucide.createIcons();
-//     }
-// }
+
+
 
 // Contact Form
 class ContactForm {
@@ -554,6 +501,10 @@ class ContactForm {
     }
     
     init() {
+        if (!this.form) {
+            console.error('Contact form not found!');
+            return;
+        }
         this.form.addEventListener('submit', (e) => {
             e.preventDefault();
             this.handleSubmit();
@@ -564,24 +515,33 @@ class ContactForm {
         const formData = new FormData(this.form);
         const data = Object.fromEntries(formData);
         
-        // Simulate form submission
         const submitBtn = this.form.querySelector('button[type="submit"]');
         const originalContent = submitBtn.innerHTML;
         
+        // spinner
         submitBtn.innerHTML = '<div style="width: 24px; height: 24px; border: 2px solid white; border-top: 2px solid transparent; border-radius: 50%; animation: spin 1s linear infinite;"></div>';
         submitBtn.disabled = true;
         
-        await new Promise(resolve => setTimeout(resolve, 2000));
+        try {
+            // Send email via EmailJS
         
-        console.log('Form submitted:', data);
-        
-        submitBtn.innerHTML = originalContent;
-        submitBtn.disabled = false;
-        
-        this.form.reset();
-        
-        // Show success message (you can customize this)
-        alert('Message sent successfully!');
+            const serviceID = 'service_0ropj3r';
+            const templateID = 'template_sfi2elr';
+
+          
+            await emailjs.send(serviceID, templateID, data);
+            
+            alert('Message sent successfully!');
+            this.form.reset();
+            console.log('Email sent:', data);
+        } catch (error) {
+            console.error('Failed to send email:', error);
+            alert('Failed to send message. Please try again later.');
+        } finally {
+            // Restore button state
+            submitBtn.innerHTML = originalContent;
+            submitBtn.disabled = false;
+        }
     }
 }
 
@@ -606,7 +566,7 @@ class ScrollAnimations {
         }, { threshold: 0.1 });
         
         // Observe all sections and cards
-        const elements = document.querySelectorAll('.section, .value-card, .timeline-item, .achievement-card, .blog-card');
+        const elements = document.querySelectorAll('.section, .value-card, .timeline-item, .achievement-card');
         elements.forEach(el => {
             el.style.opacity = '0';
             observer.observe(el);
@@ -630,7 +590,6 @@ document.addEventListener('DOMContentLoaded', () => {
     new ProjectsSection();
     new ExperienceSection();
     new AchievementsSection();
-    new BlogSection();
     new ContactForm();
     new ScrollAnimations();
     

@@ -11,27 +11,28 @@
         content="Full Stack Developer, React, Node.js, TypeScript, AI, Web Development, Portfolio, Digital Architecture">
     <meta name="author" content="Alex Chen">
 
-    <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Alex Chen - Full Stack Developer & Digital Architect">
     <meta property="og:description"
         content="Full Stack Developer specializing in React, Node.js, and AI-powered applications.">
     <meta property="og:type" content="website">
 
-    <!-- Preload critical fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 
     <link rel="stylesheet" href="styles.css">
 </head>
 
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+    emailjs.init('6QUWlpWgBmC-pM5QM'); 
+</script>
+
+
 <body>
 
-
-    <!-- Navigation -->
     <nav id="navbar" class="navbar">
         <div class="nav-container">
             <div class="nav-logo" onclick="scrollToSection('home')">
@@ -49,7 +50,7 @@
                 <button class="nav-link" data-section="projects">Projects</button>
                 <button class="nav-link" data-section="experience">Experience</button>
                 <button class="nav-link" data-section="achievements">Achievements</button>
-                <!-- <button class="nav-link" data-section="blog">Blog</button> -->
+
                 <button class="nav-link" data-section="contact">Contact</button>
             </div>
 
@@ -65,12 +66,9 @@
             <button class="nav-link" data-section="projects">Projects</button>
             <button class="nav-link" data-section="experience">Experience</button>
             <button class="nav-link" data-section="achievements">Achievements</button>
-            <button class="nav-link" data-section="blog">Blog</button>
             <button class="nav-link" data-section="contact">Contact</button>
         </div>
     </nav>
-
-    <!-- Hero Section -->
     <section id="home" class="hero-section">
         <div class="floating-shapes">
             <div class="floating-shape shape-1"></div>
@@ -101,27 +99,24 @@
                     <i data-lucide="mail"></i>
                     Get In Touch
                 </button>
-                <button class="btn btn-secondary">
+                <a href="assets/harshit_sengar_resume.pdf" download="My_Resume.pdf" class="btn btn-secondary">
                     <i data-lucide="download"></i>
                     Download Resume
-                </button>
+                </a>
             </div>
 
             <div class="social-links">
-                <a href="https://github.com" target="_blank" class="social-link">
+                <a href="https://github.com/0esoteric" target="_blank" class="social-link">
                     <i data-lucide="github"></i>
                 </a>
-                <a href="https://linkedin.com" target="_blank" class="social-link">
+                <a href="http://www.linkedin.com/in/0harshit" target="_blank" class="social-link">
                     <i data-lucide="linkedin"></i>
-                </a>
-                <a href="https://twitter.com" target="_blank" class="social-link">
-                    <i data-lucide="twitter"></i>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
+  
     <section id="about" class="section about-section">
 
         <div class="container">
@@ -141,7 +136,8 @@
                     <p>From writing basic Java programs to building full-stack web applications and deploying scalable
                         systems, my journey has been driven by curiosity and execution.</p>
                     <p>I started by exploring core programming concepts, eventually mastering the MERN stack for
-                        frontend and backend development. Along the way, I discovered the power of automation, and cloud infrastructure — leading me to embrace the world of DevOps.</p>
+                        frontend and backend development. Along the way, I discovered the power of automation, and cloud
+                        infrastructure — leading me to embrace the world of DevOps.</p>
                     <p>Today, I build performance-focused applications and manage end-to-end development—
                         from clean UIs to robust deployment pipelines.
                         This journey isn't just about writing code. It's about solving
@@ -151,12 +147,18 @@
                 <div class="about-facts">
                     <h3>Fun Facts</h3>
                     <ul class="facts-list">
-                        <li><span class="fact-dot dot-blue"></span>⌨️ 171 WPM for 7 seconds- my fingers type faster than I think</li>
-                        <li><span class="fact-dot dot-purple"></span>💡 Explored 5+ programming languages before engineering</li>
-                        <li><span class="fact-dot dot-pink"></span>🗣️ Learned Spanish just to kill school vacation boredom</li>
-                        <li><span class="fact-dot dot-green"></span>🧩 Mind-bending puzzles are my version of meditation</li>
-                        <li><span class="fact-dot dot-orange"></span>🎸 I write poetry and play instruments when the code rests</li>
-                        <li><span class="fact-dot dot-orange"></span>🌌 Outer space chaos? My favorite kind of order</li>
+                        <li><span class="fact-dot dot-blue"></span>⌨️ 171 WPM for 7 seconds- my fingers type faster than
+                            I think</li>
+                        <li><span class="fact-dot dot-purple"></span>💡 Explored 5+ programming languages before
+                            engineering</li>
+                        <li><span class="fact-dot dot-pink"></span>🗣️ Learned Spanish just to kill school vacation
+                            boredom</li>
+                        <li><span class="fact-dot dot-green"></span>🧩 Mind-bending puzzles are my version of meditation
+                        </li>
+                        <li><span class="fact-dot dot-orange"></span>🎸 I write poetry and play instruments when the
+                            code rests</li>
+                        <li><span class="fact-dot dot-orange"></span>🌌 Outer space chaos? My favorite kind of order
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -306,31 +308,6 @@
         </div>
     </section>
 
-    <!-- Blog Section -->
-    <!-- <section id="blog" class="section blog-section">
-
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">
-                    Blog & <span class="gradient-text">Insights</span>
-                </h2>
-                <p class="section-subtitle">
-                    Thoughts, tutorials, and insights from my development journey
-                </p>
-            </div>
-
-            <div class="blog-grid" id="blog-grid">
-                
-            </div>
-
-            <div class="blog-cta">
-                <button class="btn btn-primary">
-                    View All Articles
-                    <i data-lucide="arrow-right"></i>
-                </button>
-            </div>
-        </div>
-    </section> -->
 
     <!-- Contact Section -->
     <section id="contact" class="section contact-section">
@@ -353,16 +330,16 @@
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="name">Your Name</label>
-                                <input type="text" id="name" name="name" required>
+                                <input type="text" id="name" name="name" required />
                             </div>
                             <div class="form-group">
                                 <label for="email">Your Email</label>
-                                <input type="email" id="email" name="email" required>
+                                <input type="email" id="email" name="email" required />
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" required>
+                            <input type="text" id="subject" name="subject" required />
                         </div>
                         <div class="form-group">
                             <label for="message">Message</label>
@@ -373,6 +350,7 @@
                             Send Message
                         </button>
                     </form>
+
                 </div>
 
                 <div class="contact-info">
@@ -414,10 +392,12 @@
                             <a href="https://github.com/0esoteric" class="constellation-link" style="--angle: 0deg;">
                                 <i data-lucide="github"></i>
                             </a>
-                            <a href="http://www.linkedin.com/in/0harshit" class="constellation-link" style="--angle: 90deg;">
+                            <a href="http://www.linkedin.com/in/0harshit" class="constellation-link"
+                                style="--angle: 90deg;">
                                 <i data-lucide="linkedin"></i>
                             </a>
-                            <a href="https://instagram.com/0_esomist__" class="constellation-link" style="--angle: 270deg;">
+                            <a href="https://instagram.com/0_esomist__" class="constellation-link"
+                                style="--angle: 270deg;">
                                 <i data-lucide="instagram"></i>
                             </a>
                         </div>
